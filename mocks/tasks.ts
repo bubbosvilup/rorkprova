@@ -1,0 +1,125 @@
+import { Task } from '@/types/task';
+
+// Helper to generate dates relative to today
+const getRelativeDate = (days: number): string => {
+  const date = new Date();
+  date.setDate(date.getDate() + days);
+  return date.toISOString();
+};
+
+export const tasks: Task[] = [
+  {
+    id: '1',
+    title: 'Complete project proposal',
+    description: 'Finish the draft and send it to the team for review',
+    completed: false,
+    createdAt: getRelativeDate(-2),
+    updatedAt: getRelativeDate(-1),
+    dueDate: getRelativeDate(2),
+    priority: 'high',
+    categoryId: 'work',
+    tags: ['project', 'deadline'],
+    subtasks: [
+      { id: '1-1', title: 'Research market trends', completed: true },
+      { id: '1-2', title: 'Create outline', completed: true },
+      { id: '1-3', title: 'Write first draft', completed: false },
+      { id: '1-4', title: 'Review with team', completed: false },
+    ],
+  },
+  {
+    id: '2',
+    title: 'Grocery shopping',
+    description: 'Buy ingredients for the week',
+    completed: false,
+    createdAt: getRelativeDate(-1),
+    updatedAt: getRelativeDate(-1),
+    dueDate: getRelativeDate(0),
+    priority: 'medium',
+    categoryId: 'shopping',
+    tags: ['food', 'weekly'],
+    subtasks: [
+      { id: '2-1', title: 'Vegetables', completed: false },
+      { id: '2-2', title: 'Fruits', completed: false },
+      { id: '2-3', title: 'Dairy', completed: false },
+    ],
+  },
+  {
+    id: '3',
+    title: 'Morning workout',
+    description: '30 minutes cardio and strength training',
+    completed: true,
+    createdAt: getRelativeDate(-3),
+    updatedAt: getRelativeDate(0),
+    dueDate: getRelativeDate(-1),
+    priority: 'medium',
+    categoryId: 'health',
+    tags: ['fitness', 'routine'],
+  },
+  {
+    id: '4',
+    title: 'Read chapter 5',
+    description: 'Complete reading and take notes',
+    completed: false,
+    createdAt: getRelativeDate(-2),
+    updatedAt: getRelativeDate(-2),
+    dueDate: getRelativeDate(1),
+    priority: 'low',
+    categoryId: 'education',
+    tags: ['book', 'study'],
+  },
+  {
+    id: '5',
+    title: 'Pay utility bills',
+    description: 'Electricity, water, and internet',
+    completed: false,
+    createdAt: getRelativeDate(-5),
+    updatedAt: getRelativeDate(-5),
+    dueDate: getRelativeDate(3),
+    priority: 'high',
+    categoryId: 'finance',
+    tags: ['monthly', 'bills'],
+  },
+  {
+    id: '6',
+    title: 'Call mom',
+    description: 'Weekly check-in call',
+    completed: false,
+    createdAt: getRelativeDate(-1),
+    updatedAt: getRelativeDate(-1),
+    dueDate: getRelativeDate(0),
+    priority: 'medium',
+    categoryId: 'personal',
+    tags: ['family', 'weekly'],
+  },
+  {
+    id: '7',
+    title: 'Schedule dentist appointment',
+    description: 'Annual check-up',
+    completed: false,
+    createdAt: getRelativeDate(-7),
+    updatedAt: getRelativeDate(-7),
+    dueDate: getRelativeDate(7),
+    priority: 'low',
+    categoryId: 'health',
+    tags: ['appointment', 'health'],
+  },
+  {
+    id: '8',
+    title: 'Prepare presentation',
+    description: 'Client meeting on Friday',
+    completed: false,
+    createdAt: getRelativeDate(-3),
+    updatedAt: getRelativeDate(-2),
+    dueDate: getRelativeDate(4),
+    priority: 'high',
+    categoryId: 'work',
+    tags: ['client', 'meeting'],
+    subtasks: [
+      { id: '8-1', title: 'Gather data', completed: true },
+      { id: '8-2', title: 'Create slides', completed: false },
+      { id: '8-3', title: 'Practice delivery', completed: false },
+    ],
+  },
+];
+
+export default tasks;
